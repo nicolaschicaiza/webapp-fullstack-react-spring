@@ -40,17 +40,4 @@ const invoice = {
 console.log(`Total: ${invoice.total()}`);
 
 const greeting = invoice.greeting();
-console.log(greeting);
-
-/** Operador Spread en Objetos */
-// const invoice2 = invoice; // Esta forma apunta a la misma variable
-const invoice2 = { ...invoice }; // Crear nueva instancia
-
-const result = invoice === invoice2;
-
-if (result) console.log(result);
-else console.log(' No son iguales');
-
-invoice2.id = 20;
-console.log(invoice.id);
-console.log(invoice2.id);
+console.log(greeting)
