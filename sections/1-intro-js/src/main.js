@@ -1,8 +1,11 @@
-const sayHello = (name = "Pepe", age = 0) => `Hello world fuction! ${name}, edad ${age}`;
-const add = (a = 0, b = 0) => a + b;
+const invoice = {
+  id: 10,
+  name: "Compras de Oficina",
+  date: new Date(),
+  client: "Jhon Doe",
+  total: 1000,
+};
 
-const result = sayHello('Andres', 18);
-
-console.log(result);
-
-console.log(add(10, 5));
+invoice.client = "Pepe Roe";
+invoice.total = 5000;
+console.log(invoice);
