@@ -8,15 +8,36 @@ const invoice = {
     lastname: 'Doe',
     age: 20
   },
-  total: 1000,
+  items: [
+    {
+      product: 'keyboard',
+      price: 399,
+      quantity: 2
+    },
+    {
+      product: 'mouse',
+      price: 200,
+      quantity: 1
+    },
+    {
+      product: 'paper',
+      price: 100,
+      quantity: 10
+    }
+  ],
+  total: function() {
+    let total = 0;
+    this.items.forEach(item => total += item.price * item.quantity);
+    return total;
+  },
   greeting: function() {
     return `Hello ${this.client.name}`;
   }
 };
 
 // invoice.client.name = 'Pepe';
-invoice.total = 5000;
-console.log(invoice);
+// invoice.total = 5000;
+console.log(`Total: ${invoice.total()}`);
 
 const greeting = invoice.greeting();
 console.log(greeting)
