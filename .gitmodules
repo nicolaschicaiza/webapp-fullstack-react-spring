@@ -1,0 +1,6 @@
+[submodule "app/frontend"]
+	path = app/frontend
+	url = git@github.com:nicolaschicaiza/webapp-fullstack-frontend-react-2023.git
+[submodule "app/backend"]
+	path = app/backend
+	url = git@github.com:nicolaschicaiza/webapp-fullstack-backend-sprint-2023.git
