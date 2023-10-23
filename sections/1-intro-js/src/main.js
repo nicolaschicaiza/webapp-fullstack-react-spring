@@ -1,12 +1,14 @@
-let products = ['mesa', 'silla', 'notebook', 'teclado'];
+const user = {
+  username: 'andres',
+  email: 'correo@google.com',
+  age: 20,
+  ranking: 9
+}
 
-products = products.concat(['pantalla lcd', 'sony tv']);
+// const username = user.username;
+// const ranking = user.ranking;
+// const age = user.age
+const { username, ranking, age } = user;
 
-const fruits = ['peras', 'manzanas', 'sandias', 'frutillas'];
-
-const mercado = [...products, ...fruits, 'lechuga', 'papas', 'uvas'];
-const mercado2 = products.concat(fruits).concat('lechuga', 'papas', 'uvas');
-
-console.log(products);
-console.log(mercado);
-console.log(mercado2);
+console.log(`${username} tiene ${age} años de edad`);
+console.log(ranking);
