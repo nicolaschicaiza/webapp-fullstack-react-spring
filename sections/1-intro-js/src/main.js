@@ -1,3 +1,8 @@
+const papper = {
+  product: 'paper',
+  price: 100,
+  quantity: 10
+}
 const invoices = [
   {
     id: 1,
@@ -17,11 +22,7 @@ const invoices = [
         price: 200,
         quantity: 1
       },
-      {
-        product: 'paper',
-        price: 100,
-        quantity: 10
-      }
+      papper
     ]
   },
   {
@@ -62,24 +63,32 @@ const invoices = [
         price: 500,
         quantity: 1
       },
-      {
-        product: 'paper',
-        price: 100,
-        quantity: 10
-      }
+      papper
     ]
   },
 ];
 
-const invoicesName = invoices.map(i => {
-  return i.name;
-});
+const invoicesName = invoices.map(i => i.name);
 
 console.log(invoices);
 console.log(invoicesName);
 
-const invoicesClient = invoices.map(i => {
-  return i.client.name;
-});
+const invoicesClient = invoices.map(i => i.client.name);
 
 console.log(invoicesClient);
+
+const invoiceById = invoices.find(i => i.client.name === 'Pepe');
+console.log(invoiceById);
+
+const invoicesFilter = invoices.filter(i => i.id > 1);
+console.log(invoicesFilter);
+
+const invoicesFilter2 = invoices.filter(i => i.items.includes(papper));
+console.log(invoicesFilter2);
+
+console.log('filter eliminar');
+const invoiceDeleted = invoices.filter(i => i.id != '2');
+console.log(invoiceDeleted);
+
+const result = invoices.some(i => i.client.name === 'Pepe');
+console.log(result)
