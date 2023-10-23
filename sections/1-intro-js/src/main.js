@@ -1,44 +1,24 @@
-const invoice = {
-  id: 10,
-  name: "Compras de Oficina",
-  date: new Date(),
-  client: {
-    id: 2,
-    name: 'Jhon',
-    lastname: 'Doe',
-    age: 20
-  },
-  items: [
-    {
-      product: 'keyboard',
-      price: 399,
-      quantity: 2
-    },
-    {
-      product: 'mouse',
-      price: 200,
-      quantity: 1
-    },
-    {
-      product: 'paper',
-      price: 100,
-      quantity: 10
-    }
-  ],
-  total: function() {
-    let total = 0;
-    this.items.forEach(item => total += item.price * item.quantity);
-    return total;
-  },
-  greeting: function() {
-    return `Hello ${this.client.name}`;
-  }
-};
 
-console.log(invoice.company?.name);
-console.log(invoice.client?.address?.street);
-if (invoice.company != undefined && invoice.company.name) {
-  console.log('Perfect!!')
-} else {
-  console.log("Company Doesn't went");
-}
+const average = 5.9;
+
+let score = '';
+score = (average >= 5.5) ? 'Aprobado' : 'Rechazado';
+
+// if (average >= 5.5) {
+//   score = 'Aprobado'
+// } else {
+//   score = 'Rechazado'
+// }
+
+console.log(`Resultado: ${score}`);
+
+let max = 0;
+
+const a = 5;
+const b = 8;
+const c = 12;
+
+max = a > b ? a : b;
+max = max > c ? max : c;
+
+console.log(`Máximo: ${max}`);
