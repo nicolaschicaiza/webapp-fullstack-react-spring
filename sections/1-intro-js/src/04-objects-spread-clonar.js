@@ -35,10 +35,22 @@ const invoice = {
   }
 };
 
-console.log(invoice.company?.name);
-console.log(invoice.client?.address?.street);
-if (invoice.company != undefined && invoice.company.name) {
-  console.log('Perfect!!')
-} else {
-  console.log("Company Doesn't went");
-}
+// invoice.client.name = 'Pepe';
+// invoice.total = 5000;
+console.log(`Total: ${invoice.total()}`);
+
+const greeting = invoice.greeting();
+console.log(greeting);
+
+/** Operador Spread en Objetos */
+// const invoice2 = invoice; // Esta forma apunta a la misma variable
+const invoice2 = { ...invoice }; // Crear nueva instancia
+
+const result = invoice === invoice2;
+
+if (result) console.log(result);
+else console.log(' No son iguales');
+
+invoice2.id = 20;
+console.log(invoice.id);
+console.log(invoice2.id);
