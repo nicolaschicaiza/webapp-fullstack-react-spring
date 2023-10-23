@@ -8,9 +8,7 @@ const user = {
 // const username = user.username;
 // const ranking = user.ranking;
 // const age = user.age
-const detail = ({ username, email }) => {
-  console.log(`El detalle del usuario ${username} con correo ${email}`);
-}
+const { username, ranking, age } = user;
 
-detail(user);
-
+console.log(`${username} tiene ${age} años de edad`);
+console.log(ranking);
