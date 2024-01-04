@@ -1,10 +1,10 @@
-export const papper = {
+const papper = {
   product: 'papper',
   price: 100,
   quantity: 10
 }
 
-export const invoices = [
+const invoices = [
   {
     id: 1,
     name: "Compras de Oficina",
@@ -69,4 +69,11 @@ export const invoices = [
   },
 ];
 
-export const invoiceByClientName = (clientName) => invoices.find(i => i.client.name === clientName);
+const invoiceByClientName = (clientName) => invoices.find(i => i.client.name === clientName);
+// export default (clientName) => invoices.find(i => i.client.name === clientName);
+
+export {
+  invoices,
+  papper,
+  invoiceByClientName as default
+}
