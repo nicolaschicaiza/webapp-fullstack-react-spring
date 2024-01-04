@@ -71,9 +71,15 @@ const invoices = [
 
 const invoiceByClientName = (clientName) => invoices.find(i => i.client.name === clientName);
 // export default (clientName) => invoices.find(i => i.client.name === clientName);
+//
+
+const invoiceById = () => {
+  return invoices.find(i => i.id === 2);
+}
 
 export {
   invoices,
   papper,
-  invoiceByClientName as default
+  invoiceByClientName as default,
+  invoiceById
 }
