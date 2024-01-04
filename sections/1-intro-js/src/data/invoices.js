@@ -1,85 +1,101 @@
 const papper = {
-  product: 'papper',
+  product: "papper",
   price: 100,
-  quantity: 10
-}
+  quantity: 10,
+};
 
 const invoices = [
   {
     id: 1,
     name: "Compras de Oficina",
     client: {
-      name: 'Maria',
-      lastname: 'Doe',
+      name: "Maria",
+      lastname: "Doe",
     },
     items: [
       {
-        product: 'keyboard',
+        product: "keyboard",
         price: 399,
-        quantity: 2
+        quantity: 2,
       },
       {
-        product: 'mouse',
+        product: "mouse",
         price: 200,
-        quantity: 1
+        quantity: 1,
       },
-      papper
-    ]
+      papper,
+    ],
   },
   {
     id: 2,
     name: "Compras de Computación",
     client: {
-      name: 'Pepe',
-      lastname: 'Doe',
+      name: "Pepe",
+      lastname: "Doe",
     },
     items: [
       {
-        product: 'keyboard',
+        product: "keyboard",
         price: 399,
-        quantity: 2
+        quantity: 2,
       },
       {
-        product: 'screen 17inch',
+        product: "screen 17inch",
         price: 800,
-        quantity: 1
+        quantity: 1,
       },
       {
-        product: 'cpu intel',
+        product: "cpu intel",
         price: 1000,
-        quantity: 10
-      }
-    ]
+        quantity: 10,
+      },
+    ],
   },
   {
     id: 3,
     name: "Compras de Papeleria",
     client: {
-      name: 'Jhon',
-      lastname: 'Doe',
+      name: "Jhon",
+      lastname: "Doe",
     },
     items: [
       {
-        product: 'pencil',
+        product: "pencil",
         price: 500,
-        quantity: 1
+        quantity: 1,
       },
-      papper
-    ]
+      papper,
+    ],
   },
 ];
 
-const invoiceByClientName = (clientName) => invoices.find(i => i.client.name === clientName);
+const invoiceByClientName = (clientName) =>
+  invoices.find((i) => i.client.name === clientName);
 // export default (clientName) => invoices.find(i => i.client.name === clientName);
 //
 
 const invoiceById = (id) => {
-  return invoices.find(i => i.id === id);
-}
+  return invoices.find((i) => i.id === id);
+};
+
+const findInvoiceById = (id) => {
+  const promise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const result = invoiceById(id);
+      if (result) {
+        resolve(result);
+      } else {
+        reject("error: no existe la facuta por el id!");
+      }
+    }, 2500);
+  });
+  return promise;
+};
 
 export {
   invoices,
   papper,
   invoiceByClientName as default,
-  invoiceById
-}
+  invoiceById,
+  findInvoiceById,
+};
