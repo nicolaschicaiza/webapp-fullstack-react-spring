@@ -20,7 +20,7 @@ const invoice = {
       quantity: 1
     },
     {
-      product: 'paper',
+      product: 'papper',
       price: 100,
       quantity: 10
     }
