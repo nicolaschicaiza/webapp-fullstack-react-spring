@@ -1,5 +1,5 @@
 const papper = {
-  product: 'paper',
+  product: 'papper',
   price: 100,
   quantity: 10
 }
@@ -77,18 +77,22 @@ const invoicesClient = invoices.map(i => i.client.name);
 
 console.log(invoicesClient);
 
-const invoiceById = invoices.find(i => i.client.name === 'Pepe');
+const invoiceById = invoices.find(i => i.id === 2);
 console.log(invoiceById);
+
+const invoiceByClientName = invoices.find(i => i.client.name === 'Pepe');
+console.log(invoiceByClientName);
 
 const invoicesFilter = invoices.filter(i => i.id > 1);
 console.log(invoicesFilter);
 
-const invoicesFilter2 = invoices.filter(i => i.items.includes(papper));
-console.log(invoicesFilter2);
-
 console.log('filter eliminar');
 const invoiceDeleted = invoices.filter(i => i.id != '2');
 console.log(invoiceDeleted);
+
+const invoicesFilter2 = invoices.filter(i => i.items.includes(papper));
+console.log(invoicesFilter2);
+
 
 const result = invoices.some(i => i.client.name === 'Pepe');
 console.log(result)
