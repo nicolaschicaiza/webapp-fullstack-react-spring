@@ -1,6 +1,6 @@
-// Contexto de variables
-let name = "Pepe"; // declaración de variable
-name = "Andres";
+/** Contexto de variables */
+let firstname = "Pepe"; // declaración de variable
+firstname = "Andres";
 
 const lastname = "Doe"; // declaración de constante
 
@@ -11,4 +11,7 @@ if (condicion) { // flujo hijo dentro del principal
   const lastname = "Roe"
   console.log("Hello!, " + name + " " + lastname);
 }
-console.log("Hello!, " + name + " " + lastname);
+
+/** Template String */
+console.log(`Hello!, 
+${firstname} - ${lastname}`); // Interpolación de String
